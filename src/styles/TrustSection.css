@@ -1,0 +1,46 @@
+.trust-section {
+  background: #fff;
+  padding: 48px 0;
+  border-top: 1px solid rgba(94, 82, 64, 0.12);
+}
+
+.trust-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.trust-item h3 {
+  color: #13323b;
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.trust-item p {
+  color: #62708d;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.trust-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trust-item li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  color: #62708d;
+  line-height: 1.5;
+}
+
+.trust-item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}

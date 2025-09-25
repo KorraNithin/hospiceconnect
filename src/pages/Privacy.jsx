@@ -1,0 +1,54 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import '../styles/Privacy.css'
+
+const Privacy = () => {
+  return (
+    <div className="privacy">
+      <Header />
+      <main className="privacy-content">
+        <div className="container">
+          <h1>Privacy Policy</h1>
+          <p>Your privacy is important to us. This policy explains how we collect, use, and protect your information when you use our services.</p>
+
+          <h2>Information We Collect</h2>
+          <ul>
+            <li>Personal information you provide via forms (name, phone, email, etc.)</li>
+            <li>Usage data (browser, device, IP address)</li>
+          </ul>
+
+          <h2>How We Use Your Information</h2>
+          <ul>
+            <li>To provide hospice guidance and connect you with agencies</li>
+            <li>To communicate with you and respond to your requests</li>
+            <li>To improve our services</li>
+          </ul>
+
+          <h2>How We Protect Your Information</h2>
+          <ul>
+            <li>HIPAA-compliant security practices</li>
+            <li>Encryption and secure storage</li>
+            <li>Access limited to authorized personnel</li>
+          </ul>
+
+          <h2>Your Rights</h2>
+          <ul>
+            <li>You may request access, correction, or deletion of your data</li>
+            <li>Contact us at <a href="mailto:privacy@hospiceconnectcity.com">privacy@hospiceconnectcity.com</a></li>
+          </ul>
+
+          <p>For more details, contact our privacy officer.</p>
+
+          <div className="back-link">
+            <Link to="/">← Back to Home</Link>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default Privacy
