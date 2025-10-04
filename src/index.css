@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-size: 14px;
+    font-family: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    color: #13323b;
+    background-color: #fcfcfa;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 550;
+    line-height: 1.2;
+    color: #13323b;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 18px; }
+  h5 { font-size: 16px; }
+  h6 { font-size: 14px; }
+  p { margin: 0 0 16px 0; }
+  a {
+    color: #2185a1;
+    text-decoration: none;
+    transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  a:hover { color: #1a6b7d; }
+  :focus-visible {
+    outline: 2px solid #2185a1;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg text-[14px] font-medium leading-[1.5] cursor-pointer transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] no-underline relative border-0;
+  }
+  .btn:focus-visible {
+    @apply outline-none ring-0 shadow-[0_0_0_3px_rgba(33,133,161,0.4)];
+  }
+  .btn--primary { @apply text-[#fcfcfa]; background: #2185a1; }
+  .btn--primary:hover { background: #1a6b7d; }
+  .btn--secondary { @apply bg-[rgba(94,82,64,0.12)] text-[#13323b]; }
+  .btn--secondary:hover { @apply bg-[rgba(94,82,64,0.2)]; }
+  .btn--full-width { @apply w-full; }
+  .btn:disabled { @apply opacity-50 cursor-not-allowed; }
+
+  .form-control {
+    @apply block w-full px-3 py-2 text-[14px] leading-[1.5] bg-white border-2 border-[rgba(94,82,64,0.2)] rounded-lg transition-[border-color,box-shadow] duration-150 ease-[cubic-bezier(0.16,1,0.3,1)];
+    color: #13323b;
+  }
+  textarea.form-control {
+    font-family: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+  }
+  .form-control:focus {
+    @apply outline-[2px] outline-[rgba(33,133,161,0.4)];
+    border-color: #2185a1;
+  }
+  .form-label { @apply block mb-2 font-medium text-[12px]; }
+  .form-group { @apply mb-4; }
+
+  .container {
+    @apply w-full mx-auto pr-4 pl-4;
+  }
+}
+
+@layer utilities {
+  .gap-4 { gap: 4px; }
+  .gap-8 { gap: 8px; }
+  .gap-16 { gap: 16px; }
+  .mt-8 { margin-top: 8px; }
+  .mb-8 { margin-bottom: 8px; }
+  .mx-8 { margin-left: 8px; margin-right: 8px; }
+  .my-8 { margin-top: 8px; margin-bottom: 8px; }
+  .py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .px-8 { padding-left: 8px; padding-right: 8px; }
+  .py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .px-16 { padding-left: 16px; padding-right: 16px; }
+}
