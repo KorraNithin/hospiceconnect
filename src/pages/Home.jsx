@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import Header from '../components/Header'
 import HeroSection from '../components/HeroSection'
 import TrustSection from '../components/TrustSection'
@@ -11,6 +10,7 @@ const Home = () => {
   const [formData, setFormData] = useState({})
   const [showModal, setShowModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
 
   const handleFormSubmit = async (step, data) => {
     setIsLoading(true)
@@ -22,7 +22,17 @@ const Home = () => {
     if (step === 4) {
       try {
         // Send data to backend
-        await axios.post('/api/submissions', updatedFormData)
+        const response = await fetch(`${apiBaseUrl}/api/submissions`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(updatedFormData)
+        })
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`)
+        }
         // Show thank you modal after successful submission
         setShowModal(true)
       } catch (error) {

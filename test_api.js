@@ -13,7 +13,7 @@ async function testAPI() {
     try {
         console.log('Testing backend API connection...');
         
-        const response = await fetch('http://localhost:3000/api/submissions', {
+        const response = await fetch('http://localhost:5000/api/submissions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -25,8 +25,8 @@ const SubmissionsManager = () => {
     try {
       const token = localStorage.getItem('adminToken')
       if (!token) return
-
-      const response = await fetch('http://localhost:3000/api/admin/submissions', {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+      const response = await fetch(`${apiBaseUrl}/api/admin/submissions`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
